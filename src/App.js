@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 function App() {
   return (
-    <div className="app bg-stone-50 text-gray-700 min-h-screen">
+    <div className="app bg-stone-200 text-gray-600 min-h-screen">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
