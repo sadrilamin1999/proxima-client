@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useProjectsContext } from "../hooks/useProjectsContext";
+import moment from "moment";
 
 const ProjectForm = () => {
   const [title, setTitle] = useState("");
@@ -9,6 +10,7 @@ const ProjectForm = () => {
   const [manager, setManager] = useState("");
   const [dev, setDev] = useState("");
   const [error, setError] = useState(null);
+  const [emptyFields, setEmptyfields] = useState([]);
 
   const { dispatch } = useProjectsContext();
 
@@ -32,6 +34,7 @@ const ProjectForm = () => {
     // ste error
     if (!res.ok) {
       setError(json.error);
+      setEmptyfields(json.emptyFields);
     }
 
     // reset
@@ -43,6 +46,7 @@ const ProjectForm = () => {
       setManager("");
       setDev("");
       setError(null);
+      setEmptyfields([]);
       dispatch({ type: "CREATE_PROJECTS", payload: json });
     }
   };
@@ -65,7 +69,11 @@ const ProjectForm = () => {
           type="text"
           placeholder="e.g e-commerce website"
           id="title"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("title")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
       <div className="form-control flex flex-col gap-2">
@@ -81,7 +89,11 @@ const ProjectForm = () => {
           type="text"
           placeholder="node.js, react, redux etc."
           id="tech"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("tech")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
       <div className="form-control flex flex-col gap-2">
@@ -97,7 +109,11 @@ const ProjectForm = () => {
           type="number"
           placeholder="e.g 500"
           id="budget"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("budget")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
       <div className="form-control flex flex-col gap-2">
@@ -113,7 +129,11 @@ const ProjectForm = () => {
           type="number"
           placeholder="e.g 3"
           id="duration"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("duration")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
       <div className="form-control flex flex-col gap-2">
@@ -129,7 +149,11 @@ const ProjectForm = () => {
           type="text"
           placeholder="e.g Mr Habib"
           id="manager"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("manager")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
       <div className="form-control flex flex-col gap-2">
@@ -145,7 +169,11 @@ const ProjectForm = () => {
           type="number"
           placeholder="e.g 4"
           id="dev"
-          className=" bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300"
+          className={`bg-transparent border border-gray-300 py-3 px-5 rounded-md outline-none focus:border-sky-400 duration-300 ${
+            emptyFields.includes("developer")
+              ? "border-rose-500"
+              : "border-slate-500"
+          }`}
         />
       </div>
 
