@@ -59,7 +59,7 @@ const ProjectForm = ({ project, setIsModalOpen, setIsOverlayOpen }) => {
       const res = await fetch(
         `http://localhost:5000/api/projects/${project._id}`,
         {
-          method: "POST",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
@@ -71,14 +71,15 @@ const ProjectForm = ({ project, setIsModalOpen, setIsOverlayOpen }) => {
       // !res.ok
       if (!res.ok) {
         setError(json.error);
-        // setEmptyfields(json.emptyFields);
+        setEmptyfields(json.emptyFields);
       }
       // res.ok
       if (res.ok) {
         setError(null);
-        // setEmptyfields([]);
+        setEmptyfields([]);
 
         // dispatch
+        dispatch({ type: "UPDATE_PROJECT", payload: json });
 
         // close overlay modal
         setIsModalOpen(false);

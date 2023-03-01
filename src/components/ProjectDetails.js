@@ -22,7 +22,7 @@ const ProjectDetails = ({ project }) => {
       dispatch({ type: "DELETE_PROJECT", payload: json });
     }
   };
-  const handleUpdate = () => {
+  const handleUpdate = async () => {
     setIsModalOpen(true);
     setIsOverlayOpen(true);
   };
