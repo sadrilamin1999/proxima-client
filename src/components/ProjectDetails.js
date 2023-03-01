@@ -2,6 +2,7 @@ import { currencyFormatter } from "../utls/currencyFomrmatter";
 import { useProjectsContext } from "../hooks/useProjectsContext";
 import moment from "moment";
 import { useState } from "react";
+import ProjectForm from "./ProjectForm";
 
 const ProjectDetails = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +64,7 @@ const ProjectDetails = ({ project }) => {
       <div className="bottom flex gap-5">
         <button
           onClick={handleUpdate}
-          className="bg-sky-400 py-2 text-gray-900 px-5 rounded-md shadow-sm hover:bg-sky-200/50 duration-300"
+          className="bg-sky-400 py-2 text-gray-900 px-5 rounded-md shadow-sm hover:bg-sky-500 duration-300"
         >
           Update
         </button>
@@ -82,6 +83,20 @@ const ProjectDetails = ({ project }) => {
         }`}
       ></div>
       {/* modal */}
+      <div
+        className={`update-modal w-[35rem] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-stone-100 p-10 rounded-md shadow-md border-stone-200 z-[2] ${
+          isModalOpen ? "" : "hidden"
+        }`}
+      >
+        <h2 className="text-4xl font-medium text-gray-600 mb-10">
+          Update project
+        </h2>
+        <ProjectForm
+          project={project}
+          setIsModalOpen={setIsModalOpen}
+          setIsOverlayOpen={setIsOverlayOpen}
+        />
+      </div>
     </div>
   );
 };
