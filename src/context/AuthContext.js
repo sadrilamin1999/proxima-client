@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  ser: localStorage.getItem("user")
+  user: localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
     : null,
 };

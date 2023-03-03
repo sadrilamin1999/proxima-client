@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
-export const useSignup = () => {
+export const useLogin = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password) => {
+  const login = async (email, password) => {
     setLoading(true);
     setError(null);
 
-    const res = await fetch("http://localhost:5000/api/user/signup", {
+    const res = await fetch("http://localhost:5000/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,5 +38,5 @@ export const useSignup = () => {
     }
   };
 
-  return { signup, error, loading };
+  return { login, error, loading };
 };
