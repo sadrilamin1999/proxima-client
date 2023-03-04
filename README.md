@@ -9,9 +9,9 @@ Task assignment and management
 Progress tracking and deadline setting
 
 ## Tools
-React
-Node.js
-Express
+- React
+- Node.js
+- Express
 MongoDB
 Tailwind CSS
 Moment.js
