@@ -16,7 +16,7 @@ const Signup = () => {
   return (
     <form
       onSubmit={handleSignup}
-      className="signup-form flex flex-col gap-5 py-20 mx-auto max-w-sm"
+      className="signup-form flex flex-col gap-5 py-20 mx-auto max-w-sm h-screen"
     >
       <h2 className="text-4xl font-medium text-gray-600 mb-10">Signup</h2>
 

@@ -11,37 +11,39 @@ const Navbar = () => {
     logout();
   };
   return (
-    <div className="navbar container mx-auto h-20 flex items-center justify-between border-b border-stone-400/40">
-      <Link
-        to="/"
-        className="logo text-2xl text-blue-900 font-semibold tracking-wide"
-      >
-        Proxima
-      </Link>
-      <nav className="flex gap-5">
-        {!user && (
-          <div className="flex gap-5">
-            <Link to="login" className="hover:text-sky-400 duration-300">
-              Login
-            </Link>
-            <Link to="signup" className="hover:text-sky-400 duration-300">
-              Signup
-            </Link>
-          </div>
-        )}
-        {user && (
-          <div className="flex gap-5 items-center">
-            <span>{user.email}</span>
-            <button
-              onClick={handleLogout}
-              type="submit"
-              className="bg-rose-500 text-white py-3 px-5 rounded-lg hover:bg-sky-50 hover:text-slate-900 duration-300"
-            >
-              Logout
-            </button>
-          </div>
-        )}
-      </nav>
+    <div className="border-b border-stone-400/40">
+      <div className="navbar container mx-auto h-20 flex items-center justify-between">
+        <Link
+          to="/"
+          className="logo text-2xl text-blue-900 font-semibold tracking-wide"
+        >
+          Proxima
+        </Link>
+        <nav className="flex gap-5">
+          {!user && (
+            <div className="flex gap-5">
+              <Link to="login" className="hover:text-sky-400 duration-300">
+                Login
+              </Link>
+              <Link to="signup" className="hover:text-sky-400 duration-300">
+                Signup
+              </Link>
+            </div>
+          )}
+          {user && (
+            <div className="flex gap-5 items-center">
+              <span>{user.email}</span>
+              <button
+                onClick={handleLogout}
+                type="submit"
+                className="bg-rose-500 text-white py-3 px-5 rounded-lg hover:bg-sky-50 hover:text-slate-900 duration-300"
+              >
+                Logout
+              </button>
+            </div>
+          )}
+        </nav>
+      </div>
     </div>
   );
 };
