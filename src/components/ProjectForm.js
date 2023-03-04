@@ -29,14 +29,17 @@ const ProjectForm = ({ project, setIsModalOpen, setIsOverlayOpen }) => {
     // if there is no project
     if (!project) {
       // post request
-      const res = await fetch("http://localhost:5000/api/projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: JSON.stringify(projectObj),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/api/projects`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+          body: JSON.stringify(projectObj),
+        }
+      );
 
       const json = await res.json();
 
@@ -65,7 +68,7 @@ const ProjectForm = ({ project, setIsModalOpen, setIsOverlayOpen }) => {
     if (project) {
       //send patch
       const res = await fetch(
-        `http://localhost:5000/api/projects/${project._id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/projects/${project._id}`,
         {
           method: "PATCH",
           headers: {
