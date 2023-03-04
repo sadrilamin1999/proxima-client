@@ -1,5 +1,6 @@
 import { currencyFormatter } from "../utls/currencyFomrmatter";
 import { useProjectsContext } from "../hooks/useProjectsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import moment from "moment";
 import { useState } from "react";
 import ProjectForm from "./ProjectForm";
@@ -8,12 +9,19 @@ const ProjectDetails = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const { dispatch } = useProjectsContext();
+  const { user } = useAuthContext();
 
   const handleDelete = async () => {
+    if (!user) {
+      return;
+    }
     const res = await fetch(
       `http://localhost:5000/api/projects/${project._id}`,
       {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
       }
     );
     const json = await res.json();
@@ -49,7 +57,7 @@ const ProjectDetails = ({ project }) => {
             Added: {moment(project.createdAt).format("DD-MMM hh:mm A")}
           </span>
           <span>
-            Updated: {moment(project.createdAt).format("DD-MMM hh:mm A")}
+            Updated: {moment(project.updatedAt).format("DD-MMM hh:mm A")}
           </span>
         </div>
         <div className="right flex flex-col">
