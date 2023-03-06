@@ -23,9 +23,9 @@ Proxima is a web application built for project managers to efficiently plan, exe
 
 ## Installation
 1. Clone the repository: git clone https://github.com/yourusername/proxima.git
-2. Navigate to the project directory: cd proxima
-3. Install dependencies: npm install
-4. Start the application: npm start
+2. Navigate to the project directory: `cd proxima-client`
+3. Install dependencies:`npm install` 
+4. Start the application:`npm start`
 
 ## Conclusion
 Proxima is an efficient and user-friendly project management web application. Its features such as user authentication, task management, and progress tracking make it an essential tool for project managers. The application is built using modern web technologies such as React, Node.js, Express, and MongoDB. With its intuitive user interface and features, it provides an optimal user experience for project management.
