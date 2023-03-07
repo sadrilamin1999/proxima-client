@@ -36,7 +36,7 @@ const Navbar = () => {
               <button
                 onClick={handleLogout}
                 type="submit"
-                className="bg-red-500 text-white py-3 px-5 rounded-lg hover:bg-red-600 duration-300"
+                className="bg-red-600 text-white py-3 px-5 rounded-lg hover:bg-red-700 duration-300"
               >
                 Logout
               </button>
