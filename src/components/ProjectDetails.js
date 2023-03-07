@@ -72,13 +72,13 @@ const ProjectDetails = ({ project }) => {
       <div className="bottom flex gap-5">
         <button
           onClick={handleUpdate}
-          className="bg-sky-400 py-2 text-gray-900 px-5 rounded-md shadow-sm hover:bg-sky-500 duration-300"
+          className="bg-blue-600 py-2 text-white px-5 rounded-md shadow-sm hover:bg-blue-700 duration-300"
         >
           Update
         </button>
         <button
           onClick={handleDelete}
-          className="text-rose-500 hover:text-rose-500/50 duration-300"
+          className="text-red-500 hover:text-red-600/50 duration-300"
         >
           Delete
         </button>

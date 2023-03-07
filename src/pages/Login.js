@@ -57,7 +57,7 @@ const Login = () => {
       <button
         disabled={loading}
         type="submit"
-        className="bg-sky-400 text-gray-900 py-3 rounded-md hover:bg-sky-500 duration-300 mt-3"
+        className="bg-blue-600 text-white  py-3 rounded-md hover:bg-blue-700 duration-300 mt-3"
       >
         Log in
       </button>
