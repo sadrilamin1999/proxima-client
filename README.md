@@ -2,11 +2,11 @@
 Proxima is a web application built for project managers to efficiently plan, execute and monitor projects. It provides a user-friendly interface that simplifies project management tasks such as task assignment, progress tracking, and deadline setting. This application is built using React, Node.js, Express, MongoDB, and Tailwind CSS.
 
 ## Features
-- User authentication with bcrypt, JSON Web Token, and validator
-- User profile management
-- Project creation and management
-- Task assignment and management
-- Progress tracking and deadline setting
+- Effortlessly manage projects: Create, update,  and delete, projects quickly and easily using the user-friendly interface.
+= Robust security features: The app features highly secure JWT authentication and frontend route protection, ensuring that your data is always safe and secure.
+= User-specific project views: Users can only see the projects they have created, ensuring that project information is kept private and secure.
+= Intuitive and streamlined UI: The app’s sleek and intuitive user interface makes managing projects a breeze.
+
 
 ## Tools
 - React
