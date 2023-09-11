@@ -233,7 +233,7 @@ const ProjectForm = ({ project, setIsModalOpen, setIsOverlayOpen }) => {
 
       <button
         type="submit"
-        className="bg-blue-700 py-3 text-white rounded-md shadow-sm hover:bg-blue-700/90 duration-300 tracking-widest font-semibold"
+        className="bg-blue-700 py-3 text-blue-50 rounded-md shadow-sm hover:bg-blue-700/90 duration-300 tracking-widest font-semibold"
       >
         {project ? "Confirm Update" : "Add Project"}
       </button>

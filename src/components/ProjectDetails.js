@@ -72,7 +72,7 @@ const ProjectDetails = ({ project }) => {
       <div className="bottom flex gap-5">
         <button
           onClick={handleUpdate}
-          className="bg-blue-700 py-2 text-white px-5 rounded-md shadow-sm hover:bg-blue-700/90 duration-300"
+          className="bg-blue-700 py-2 text-blue-50 px-5 rounded-md shadow-sm hover:bg-blue-700/90 duration-300"
         >
           Update
         </button>
