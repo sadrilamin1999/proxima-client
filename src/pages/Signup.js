@@ -57,9 +57,9 @@ const Signup = () => {
       <button
         type="submit"
         disabled={loading}
-        className="bg-blue-600 text-white  py-3 rounded-md hover:bg-blue-700 duration-300 mt-3"
+        className="bg-blue-700 text-white  py-3 rounded-md hover:bg-blue-700/90 duration-300 mt-3 tracking-wide font-semibold"
       >
-        Signup
+        Sign up
       </button>
       {error && (
         <p className="bg-rose-500/20 text-rose-500 border border-rose-700 p-2 rounded-md">

@@ -11,7 +11,7 @@ const Navbar = () => {
     logout();
   };
   return (
-    <div className="border-b border-stone-400/40">
+    <div className="border-b border-stone-400/40 backdrop-blur-2xl">
       <div className="navbar container mx-auto h-20 flex items-center justify-between">
         <Link
           to="/"

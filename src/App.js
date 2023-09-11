@@ -9,7 +9,7 @@ import { useAuthContext } from "./hooks/useAuthContext";
 function App() {
   const { user } = useAuthContext();
   return (
-    <div className="app bg-stone-200 text-gray-600 min-h-screen">
+    <div className="app bg-white text-gray-600 min-h-screen">
       <Navbar />
       <Routes>
         <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
